@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dr. C.V. Raman University Library - Admin Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background-image: url('https://images.unsplash.com/photo-1580582932707-520aed4d90c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+
+    .overlay {
+      background: linear-gradient(to bottom, rgba(15, 23, 42, 0.8), rgba(22, 101, 52, 0.8));
+      min-height: 100vh;
+    }
+
+    .fade-in {
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .slide-in-left {
+      animation: slideInLeft 0.8s ease-out;
+    }
+
+    .slide-in-right {
+      animation: slideInRight 0.8s ease-out;
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideInLeft {
+      0% {
+        transform: translateX(-50px);
+        opacity: 0;
+      }
+
+      100% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideInRight {
+      0% {
+        transform: translateX(50px);
+        opacity: 0;
+      }
+
+      100% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+
+<body class="font-sans text-white">
+  <div class="overlay flex flex-col min-h-screen">
+
+    <!-- Navbar -->
+    <nav class="bg-green-900 bg-opacity-95 text-white" role="navigation" aria-label="Main navigation">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+        <div class="flex flex-wrap justify-between items-center">
+          <div class="flex items-center w-full sm:w-auto mb-2 sm:mb-0">
+            <img src="Assets/CVRU.jpeg" alt="CVRU Logo" class="h-10 w-10 mr-2 rounded-full" />
+            <h1 class="text-lg sm:text-xl font-bold">Dr. C.V. Raman University</h1>
+          </div>
+          <div class="w-full flex justify-center sm:justify-start space-x-6 text-sm sm:hidden">
+            <a href="#" class="hover:text-blue-300 hover:underline transition">Dashboard</a>
+            <a href="#" class="hover:text-blue-300 hover:underline transition">Report</a>
+            <a href="#" class="hover:text-blue-300 hover:underline transition">Logout</a>
+          </div>
+          <div class="hidden sm:flex space-x-6 text-sm sm:text-base">
+            <a href="#" class="hover:text-blue-300 hover:underline transition">Dashboard</a>
+            <a href="#" class="hover:text-blue-300 hover:underline transition">Report</a>
+            <a href="#" class="hover:text-blue-300 hover:underline transition">Logout</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-grow flex items-center justify-center">
+      <div class="max-w-7xl mx-auto px-4 flex flex-col lg:flex-row items-center">
+        <!-- Left Section -->
+        <div class="lg:w-1/2 mb-10 lg:mb-0 text-center lg:text-left slide-in-left">
+          <h2 class="text-4xl sm:text-5xl font-extrabold mb-4 text-green-100">Welcome, Admin!</h2>
+          <p class="text-lg sm:text-xl mb-6 text-green-200">
+            You have successfully logged into the Dr. C.V. Raman University Library Admin Dashboard.
+          </p>
+          <p class="text-md sm:text-lg italic mb-6 text-green-300">
+            "The library is the temple of learning, and you are its guardian." – Dr. C.V. Raman
+          </p>
+          <div class="flex flex-wrap justify-center lg:justify-start gap-4">
+            <button onclick="setTab('overview')" id="tab-overview"
+              class="px-4 py-2 rounded-lg bg-green-600 text-white">Overview</button>
+            <button onclick="setTab('addBook')" id="tab-addBook"
+              class="px-4 py-2 rounded-lg bg-green-100 text-green-800">Add Book</button>
+            <button onclick="setTab('removeBook')" id="tab-removeBook"
+              class="px-4 py-2 rounded-lg bg-green-100 text-green-800">Remove Book</button>
+            <button onclick="setTab('updateBook')" id="tab-updateBook"
+              class="px-4 py-2 rounded-lg bg-green-100 text-green-800">Update Book</button>
+          </div>
+        </div>
+
+        <!-- Right Section -->
+        <div class="lg:w-1/2 flex justify-center h-[70vh]" id="adminContent">
+          <!-- Dynamic Content Goes Here -->
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-green-900 bg-opacity-95 py-6 fade-in">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <p class="text-green-200">© 2025 Dr. C.V. Raman University. All rights reserved.</p>
+          <div class="flex space-x-6 mt-4 md:mt-0">
+            <a href="#" class="hover:text-green-300 transition">Privacy Policy</a>
+            <a href="#" class="hover:text-green-300 transition">Terms of Service</a>
+            <a href="#" class="hover:text-green-300 transition">Contact Us</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    const contentMap = {
+      overview: `
+    <div class="bg-white text-gray-800 p-8 rounded-xl shadow-2xl w-full max-w-lg slide-in-right">
+      <h2 class="text-2xl font-bold mb-6 text-center text-green-800">Dashboard Overview</h2>
+      <p class="text-green-700 mb-4">Welcome, Admin! Manage the library efficiently with the tools below.</p>
+      <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div class="bg-green-100 p-4 rounded-lg">
+          <h3 class="font-semibold text-green-800">Total Books</h3>
+          <p id="totalBooks" class="text-xl text-green-600">Loading...</p>
+        </div>
+        <div class="bg-green-100 p-4 rounded-lg">
+          <h3 class="font-semibold text-green-800">Registered Students</h3>
+          <p id="registeredStudents" class="text-xl text-green-600">Loading...</p>
+        </div>
+        <div class="bg-green-100 p-4 rounded-lg">
+          <h3 class="font-semibold text-green-800">Books Issued</h3>
+          <p id="booksIssued" class="text-xl text-green-600">Loading...</p>
+        </div>
+      </div>
+    </div>
+  `,
+      addBook: `
+        <div class="bg-white text-gray-800 p-8 rounded-xl shadow-2xl w-full max-w-lg slide-in-right overflow-y-auto">
+          <h2 class="text-2xl font-bold mb-6 text-center text-green-800">Add New Book</h2>
+          <form id="addBookForm">
+            <div class="mb-4">
+              <label class="block text-green-700 mb-2 font-medium">Book Title</label>
+              <input type="text" name="title" class="w-full p-3 border border-green-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" placeholder="Enter book title" required />
+            </div>
+            <div class="mb-4">
+              <label class="block text-green-700 mb-2 font-medium">Author</label>
+              <input type="text" name="author" class="w-full p-3 border border-green-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" placeholder="Enter author name" required />
+            </div>
+            <div class="mb-4">
+              <label class="block text-green-700 mb-2 font-medium">Genre</label>
+              <input type="text" name="genre" class="w-full p-3 border border-green-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" placeholder="Enter genre" required />
+            </div>
+            <div class="mb-4">
+              <label class="block text-green-700 mb-2 font-medium">Image URL</label>
+              <input type="file" name="imgUrl" class="w-full p-3 border border-green-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" placeholder="Enter image URL" />
+            </div>
+            <div class="mb-4">
+              <label class="block text-green-700 mb-2 font-medium">Publisher</label>
+              <input type="text" name="publisher" class="w-full p-3 border border-green-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" placeholder="Enter publisher" required />
+            </div>
+            <div class="mb-4">
+              <label class="block text-green-700 mb-2 font-medium">Publication Year</label>
+              <input type="number" name="publicationYear" min="1800" max="2025" class="w-full p-3 border border-green-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" placeholder="Enter publication year" required />
+            </div>
+            <div class="mb-4">
+              <label class="block text-green-700 mb-2 font-medium">Language</label>
+                <div class="flex items-center mb-2">
+                  <input type="radio" id="english" name="language" value="English" class="mr-2" required>
+                  <label for="english" class="text-gray-700">English</label>
+                </div>
+                <div class="flex items-center">
+                  <input type="radio" id="hindi" name="language" value="Hindi" class="mr-2" required>
+                  <label for="hindi" class="text-gray-700">Hindi</label>
+                </div>
+            </div>
+            <div class="mb-4">
+              <label class="block text-green-700 mb-2 font-medium">Total Number of Books</label>
+              <input type="number" name="totalNumberOfBooks" min="1" class="w-full p-3 border border-green-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" placeholder="Enter total copies" required />
+            </div>
+            <button id="addBook" type="submit" class="w-full bg-green-600 text-white p-3 rounded-lg hover:bg-green-700 transition">Add Book</button>
+          </form>
+        </div>
+      `,
+      removeBook: `
+        <div class="bg-white text-gray-800 p-8 rounded-xl shadow-2xl w-full max-w-lg slide-in-right">
+          <h2 class="text-2xl font-bold mb-6 text-center text-green-800">Remove Book</h2>
+          <form id="removeBookForm">
+            <div class="mb-4">
+              <label class="block text-green-700 mb-2 font-medium">Enter ISBN to Remove</label>
+              <input type="text" name="isbn" class="w-full p-3 border border-green-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" placeholder="Enter ISBN" required />
+            </div>
+            <button id='removeBook' type="submit" name="isbn" class="w-full bg-green-600 text-white p-3 rounded-lg hover:bg-green-700 transition">Remove Book</button>
+          </form>
+        </div>
+      `,
+      updateBook: `
+    <div class="bg-white text-gray-800 p-8 rounded-xl shadow-2xl w-full max-w-lg slide-in-right overflow-y-auto">
+      <h2 class="text-2xl font-bold mb-6 text-center text-green-800">Update Book</h2>
+      <form id="updateBookForm" enctype="multipart/form-data">
+        <div class="mb-4">
+          <label class="block text-green-700 mb-2 font-medium">ISBN</label>
+          <div class="flex">
+            <input id="isbn" type="text" name="isbn"
+              class="flex-1 p-3 border border-green-300 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+              placeholder="Enter ISBN" required />
+            <button id="search" class="bg-green-600 text-xs text-white px-4 rounded-r-lg hover:bg-green-700 transition duration-200">
+              Search
+            </button>
+          </div>
+        </div>
+        <div class="mb-4">
+          <label class="block text-green-700 mb-2 font-medium">Book Title</label>
+          <input type="text" name="title" class="w-full p-3 border border-green-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" placeholder="Enter book title" />
+        </div>
+        <div class="mb-4">
+          <label class="block text-green-700 mb-2 font-medium">Author</label>
+          <input type="text" name="author" class="w-full p-3 border border-green-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" placeholder="Enter author name" />
+        </div>
+        <div class="mb-4">
+          <label class="block text-green-700 mb-2 font-medium">Genre</label>
+          <input type="text" name="genre" class="w-full p-3 border border-green-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" placeholder="Enter genre" />
+        </div>
+        <div class="mb-4">
+          <label class="block text-green-700 mb-2 font-medium">Image</label>
+          <input type="file" name="imgUrl" accept="image/*" class="w-full p-3 border border-green-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" />
+        </div>
+        <div class="mb-4">
+          <label class="block text-green-700 mb-2 font-medium">Publisher</label>
+          <input type="text" name="publisher" class="w-full p-3 border border-green-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" placeholder="Enter publisher" />
+        </div>
+        <div class="mb-4">
+          <label class="block text-green-700 mb-2 font-medium">Publication Year</label>
+          <input type="number" name="publicationYear" min="1800" max="2025" class="w-full p-3 border border-green-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" placeholder="Enter publication year" />
+        </div>
+        <div class="mb-4">
+          <label class="block text-green-700 mb-2 font-medium">Language</label>
+          <input type="text" name="language" class="w-full p-3 border border-green-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" placeholder="Enter language" />
+        </div>
+        <div class="mb-4">
+          <label class="block text-green-700 mb-2 font-medium">Total Number of Books</label>
+          <input type="number" name="totalNumberOfBooks" min="1" class="w-full p-3 border border-green-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" placeholder="Enter total copies" />
+        </div>
+        <button type="submit" class="w-full bg-green-600 text-white p-3 rounded-lg hover:bg-green-700 transition">Update Book</button>
+      </form>
+    </div>
+  `
+    };
+
+    function setTab(tab) {
+      document.getElementById("adminContent").innerHTML = contentMap[tab];
+      document.querySelectorAll('button[id^="tab-"]').forEach(btn => {
+        btn.classList.remove('bg-green-600', 'text-white');
+        btn.classList.add('bg-green-100', 'text-green-800');
+      });
+      document.getElementById(`tab-${tab}`).classList.add('bg-green-600', 'text-white');
+
+      if (tab === 'addBook' && typeof window.setupAddBookForm === 'function') {
+        window.setupAddBookForm();
+      }
+      else if (tab === 'removeBook' && typeof window.setRemoveBookForm === 'function') {
+        window.setRemoveBookForm();
+      }
+      else if (tab === 'updateBook' && typeof window.setUpdateBookForm === 'function') {
+        window.setUpdateBookForm();
+      }
+      // Add similar setup calls for other forms if implemented in admin.js
+    }
+
+    // Initialize with Overview tab
+    setTab('overview');
+
+    Languages = {
+      1: "English", 2: "Hindi"
+    }
+  </script>
+  <script src="Admin/overview.js"></script>
+  <script src="Admin/addBooks.js"></script>
+  <script src="Admin/removeBook.js"></script>
+  <script src="Admin/updateBook.js"></script>
+</body>
+
+</html>

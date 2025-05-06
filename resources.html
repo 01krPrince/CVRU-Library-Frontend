@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resources | CVRU Library</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #f0f4ff, #ffffff);
+      min-height: 100vh;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-in {
+      animation: fadeIn 0.8s ease-out forwards;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="bg-white shadow-sm py-4 fade-in">
+    <div class="max-w-6xl mx-auto px-4 flex justify-between items-center">
+      <div class="flex items-center space-x-3">
+        <img src="Assets/CVRU.jpeg" alt="Logo" class="w-12 h-12 rounded-full" />
+        <span class="text-xl font-semibold text-indigo-800">CVRU Library</span>
+      </div>
+      <nav class="space-x-6 text-gray-700 font-medium text-sm hidden sm:block">
+        <a href="index.html" class="hover:text-indigo-600">Home</a>
+        <a href="resources.html" class="text-indigo-600 font-semibold">Resources</a>
+        <a href="contact.html" class="hover:text-indigo-600">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Resources Section -->
+  <section class="py-12 px-6 fade-in">
+    <div class="max-w-5xl mx-auto text-center">
+      <h2 class="text-3xl font-bold text-indigo-800 mb-8">Library Resources</h2>
+      <div class="grid gap-6 sm:grid-cols-2 md:grid-cols-3">
+        <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+          <h3 class="text-lg font-semibold text-indigo-700 mb-2">Books</h3>
+          <p class="text-gray-600 mb-3">Explore a wide range of academic and fiction books.</p>
+          <a href="#" class="text-indigo-600 font-medium hover:underline">Browse Books</a>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+          <h3 class="text-lg font-semibold text-indigo-700 mb-2">Journals</h3>
+          <p class="text-gray-600 mb-3">Access national and international journals in various fields.</p>
+          <a href="#" class="text-indigo-600 font-medium hover:underline">View Journals</a>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+          <h3 class="text-lg font-semibold text-indigo-700 mb-2">eBooks</h3>
+          <p class="text-gray-600 mb-3">Read thousands of eBooks anytime, anywhere.</p>
+          <a href="#" class="text-indigo-600 font-medium hover:underline">Read eBooks</a>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+          <h3 class="text-lg font-semibold text-indigo-700 mb-2">Magazines</h3>
+          <p class="text-gray-600 mb-3">Stay updated with monthly and weekly magazines.</p>
+          <a href="#" class="text-indigo-600 font-medium hover:underline">Explore Magazines</a>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+          <h3 class="text-lg font-semibold text-indigo-700 mb-2">Online Databases</h3>
+          <p class="text-gray-600 mb-3">Access scholarly databases like JSTOR, IEEE, and more.</p>
+          <a href="#" class="text-indigo-600 font-medium hover:underline">Access Databases</a>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+          <h3 class="text-lg font-semibold text-indigo-700 mb-2">Help Desk</h3>
+          <p class="text-gray-600 mb-3">Need help finding a resource? We’re here for you.</p>
+          <a href="contact.html" class="text-indigo-600 font-medium hover:underline">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-white border-t text-sm text-gray-600 py-4 fade-in">
+    <div class="max-w-6xl mx-auto px-6 flex justify-between flex-col sm:flex-row items-center">
+      <p>© 2025 CVRU. All rights reserved.</p>
+      <div class="space-x-4 mt-2 sm:mt-0">
+        <a href="#" class="hover:text-indigo-600">Privacy</a>
+        <a href="#" class="hover:text-indigo-600">Terms</a>
+        <a href="contact.html" class="hover:text-indigo-600">Help</a>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

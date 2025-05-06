@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dr. C.V. Raman University Library - Student Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background-image: url('https://images.unsplash.com/photo-1512820790803-83ca4e12c65d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+
+    .overlay {
+      background: linear-gradient(to bottom, rgba(21, 128, 61, 0.8), rgba(7, 89, 133, 0.8));
+      min-height: 100vh;
+    }
+
+    .fade-in {
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .slide-in-left {
+      animation: slideInLeft 0.8s ease-out;
+    }
+
+    .slide-in-right {
+      animation: slideInRight 0.8s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideInLeft {
+      from {
+        transform: translateX(-50px);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideInRight {
+      from {
+        transform: translateX(50px);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    .tab-button {
+      background-color: rgba(255, 255, 255, 0.2);
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 9999px;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+
+    .tab-button:hover {
+      background-color: rgba(255, 255, 255, 0.4);
+      transform: scale(1.05);
+    }
+
+    .tab-button:focus {
+      outline: none;
+      ring: 2px solid #3b82f6;
+    }
+
+    .hamburger {
+      display: none;
+    }
+
+    @media (max-width: 640px) {
+      .nav-links {
+        display: none;
+      }
+
+      .nav-links.active {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .hamburger {
+        display: block;
+      }
+    }
+  </style>
+</head>
+
+<body class="font-sans text-white">
+  <div class="overlay flex flex-col min-h-screen">
+    <!-- Navbar -->
+    <nav class="bg-blue-900 bg-opacity-95 text-white" role="navigation" aria-label="Main navigation">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+        <div class="flex flex-wrap justify-between items-center">
+          <div class="flex items-center w-full sm:w-auto mb-2 sm:mb-0">
+            <img src="Assets/CVRU.jpeg" alt="CVRU Logo" class="h-10 w-10 mr-2 rounded-full" />
+            <h1 class="text-lg sm:text-xl font-bold">Dr. C.V. Raman University</h1>
+          </div>
+          <button class="hamburger sm:hidden focus:outline-none" aria-label="Toggle menu" onclick="toggleMenu()">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+            </svg>
+          </button>
+          <div class="nav-links hidden sm:flex space-x-6 text-sm sm:text-base" id="nav-links">
+            <a href="#" class="hover:text-blue-300 hover:underline transition" aria-current="page">Dashboard</a>
+            <a href="#" class="hover:text-blue-300 hover:underline transition">Help</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <main class="flex-1 mt-10 items-center justify-center">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center">
+        <div class="lg:w-1/2 mb-10 lg:mb-0 text-center lg:text-left slide-in-left">
+          <h2 class="text-5xl font-extrabold mb-4 text-blue-100">Welcome, Student!</h2>
+          <p class="text-lg mb-6 text-blue-200">
+            You have successfully logged into the Library Dashboard.
+            Browse, borrow, and manage your library resources with ease.
+          </p>
+          <p class="text-md italic mb-6 text-blue-300">"Books are the quietest and most constant of friends."
+            – Dr. C.V. Raman</p>
+          <div class="flex flex-wrap justify-center lg:justify-start gap-4" role="tablist">
+            <button onclick="setActiveTab('overview')" class="tab-button" role="tab"
+              aria-selected="true">Overview</button>
+            <button onclick="setActiveTab('searchBooks')" class="tab-button" role="tab" aria-selected="false">Search
+              Books</button>
+            <button onclick="setActiveTab('borrowBooks')" class="tab-button" role="tab" aria-selected="false">Borrow
+              Books</button>
+            <button onclick="setActiveTab('returnBooks')" class="tab-button" role="tab" aria-selected="false">Return
+              Books</button>
+            <button onclick="setActiveTab('profile')" class="tab-button" role="tab"
+              aria-selected="false">Profile</button>
+          </div>
+        </div>
+
+        <div class="lg:w-1/2 flex flex-col items-center" id="content-container" role="tabpanel"></div>
+      </div>
+      <div id="searchResults"
+        class="max-w-[90vw] mx-auto mb-10 hidden mt-10 bg-white bg-opacity-90 text-gray-900 p-6 rounded-xl shadow-lg transition-all duration-300 ease-in-out">
+      </div>
+    </main>
+
+    <footer class="bg-blue-900 bg-opacity-95 py-6 fade-in">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <p class="text-blue-200">© 2025 Dr. C.V. Raman University. All rights reserved.</p>
+          <div class="flex space-x-6 mt-4 md:mt-0">
+            <a href="#" class="hover:text-blue-300 transition">Privacy Policy</a>
+            <a href="#" class="hover:text-blue-300 transition">Terms of Service</a>
+            <a href="#" class="hover:text-blue-300 transition">Contact Us</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    let activeTab = 'overview';
+
+    function toggleMenu() {
+      const navLinks = document.getElementById('nav-links');
+      navLinks.classList.toggle('active');
+    }
+
+    function setActiveTab(tab) {
+      activeTab = tab;
+      document.querySelectorAll('.tab-button').forEach(btn => {
+        btn.setAttribute('aria-selected', btn.onclick.toString().includes(tab) ? 'true' : 'false');
+      });
+      renderContent();
+    }
+
+    async function renderContent() {
+      const contentContainer = document.getElementById('content-container');
+      let contentHTML = '';
+
+      switch (activeTab) {
+        case 'overview':
+          contentHTML = `
+            <div class="bg-white text-gray-800 p-8 rounded-xl shadow-2xl w-full max-w-lg slide-in-right">
+              <h2 class="text-2xl font-bold mb-6 text-center text-blue-800">Dashboard Overview</h2>
+              <p class="text-blue-700 mb-4">Welcome, Student! Explore the library resources below.</p>
+              <div class="grid grid-cols-1 gap-4">
+                <div class="bg-blue-100 p-4 rounded-lg">
+                  <h3 class="font-semibold text-blue-800">Books Borrowed</h3>
+                  <p class="text-2xl text-blue-600">3</p>
+                </div>
+                <div class="bg-blue-100 p-4 rounded-lg">
+                  <h3 class="font-semibold text-blue-800">Due Date</h3>
+                  <p class="text-2xl text-blue-600">Apr 25, 2025</p>
+                </div>
+                <div class="bg-blue-100 p-4 rounded-lg">
+                  <h3 class="font-semibold text-blue-800">Available Books</h3>
+                  <p class="text-2xl text-blue-600">1,234</p>
+                </div>
+              </div>
+            </div>`;
+          break;
+
+        case 'searchBooks':
+          contentHTML = `
+            <div class="bg-white text-gray-800 p-8 rounded-xl shadow-2xl w-full max-w-lg slide-in-right">
+              <h2 class="text-2xl font-bold mb-6 text-center text-blue-800">Search Books</h2>
+              <form id="searchForm">
+                <div class="mb-4">
+                  <label class="block text-blue-700 mb-2 font-medium" for="searchQuery">
+                    Search by Title, Author, or ISBN
+                  </label>
+                  <input type="text" id="searchQuery" class="w-full p-3 border border-blue-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter search query" required aria-required="true" />
+                </div>
+                <button type="submit" class="w-full bg-blue-600 text-white p-3 rounded-lg hover:bg-blue-700 transition transform hover:scale-105">Search</button>
+              </form>
+            </div>`;
+          break;
+
+        case 'borrowBooks':
+          contentHTML = `
+            <div class="bg-white text-gray-800 p-8 rounded-xl shadow-2xl w-full max-w-lg slide-in-right">
+              <h2 class="text-2xl font-bold mb-6 text-center text-blue-800">Borrow Books</h2>
+              <form id="borrowForm">
+                <div class="mb-4">
+                  <label class="block text-blue-700 mb-2 font-medium" for="bookId">Book ID or ISBN</label>
+                  <input type="text" id="bookId" class="w-full p-3 border border-blue-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter Book ID or ISBN" required aria-required="true" />
+                </div>
+                <button type="submit" class="w-full bg-blue-600 text-white p-3 rounded-lg hover:bg-blue-700 transition transform hover:scale-105">Borrow Book</button>
+              </form>
+              <p id="borrowStatus" class="mt-4 text-center hidden"></p>
+            </div>`;
+          break;
+          async function borrowBook(bookId) {
+  const status = document.getElementById('borrowStatus');
+  status.classList.remove('hidden');
+  status.innerHTML = `<p class='text-blue-600'>Processing...</p>`;
+
+  const studentId = localStorage.getItem("id");
+  if (!studentId) {
+    status.innerHTML = `<p class='text-red-600'>Error: Student ID not found. Please log in again.</p>`;
+    return;
+  }
+
+  const payload = {
+    studentId: studentId,
+    bookId: bookId
+  };
+
+  try {
+    const response = await fetch(`http://localhost:8080/api/borrow-records/BorrowBook`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify(payload)
+    });
+
+    if (!response.ok) {
+      const errorData = await response.json().catch(() => ({}));
+      throw new Error(errorData.message || `Server responded with status ${response.status}`);
+    }
+
+    const result = await response.json();
+    status.innerHTML = `<p class='text-green-600'>Book borrowed successfully! Borrow ID: ${result.borrowId || 'N/A'}</p>`;
+  } catch (error) {
+    console.error('Error borrowing book:', error);
+    status.innerHTML = `<p class='text-red-600'>Failed to borrow book: ${error.message}. Please try again later.</p>`;
+  }
+}
+        case 'returnBooks':
+          contentHTML = `
+            <div class="bg-white text-gray-800 p-8 rounded-xl shadow-2xl w-full max-w-lg slide-in-right">
+              <h2 class="text-2xl font-bold mb-6 text-center text-blue-800">Return Books</h2>
+              <form id="returnForm">
+                <div class="mb-4">
+                  <label class="block text-blue-700 mb-2 font-medium" for="bookIdReturn">Book ID or ISBN</label>
+                  <input type="text" id="bookIdReturn" class="w-full p-3 border border-blue-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter Book ID or ISBN" required aria-required="true" />
+                </div>
+                <button type="submit" class="w-full bg-blue-600 text-white p-3 rounded-lg hover:bg-blue-700 transition transform hover:scale-105">Return Book</button>
+              </form>
+              <p id="returnStatus" class="mt-4 text-center hidden"></p>
+            </div>`;
+          break;
+
+        case 'profile':
+          contentHTML = `
+            <div class="bg-white text-gray-800 p-8 rounded-xl shadow-2xl w-full max-w-lg slide-in-right">
+              <h2 class="text-2xl font-bold mb-6 text-center text-blue-800">Student Profile</h2>
+              <div class="text-blue-700">
+                <p><strong>Name:</strong> John Doe</p>
+                <p><strong>Student ID:</strong> CVRU12345</p>
+                <p><strong>Email:</strong> john.doe@cvru.edu</p>
+                <p><strong>Books Borrowed:</strong> 3</p>
+                <p><strong>Fines:</strong> $0.00</p>
+              </div>
+            </div>`;
+          break;
+
+        default:
+          contentHTML = `<p class="text-white">Invalid Tab Selected</p>`;
+      }
+
+      contentContainer.innerHTML = contentHTML;
+
+      // Attach form listeners
+      const searchForm = document.getElementById('searchForm');
+      if (searchForm) {
+        searchForm.addEventListener('submit', async (e) => {
+          e.preventDefault();
+          const query = document.getElementById('searchQuery').value;
+          await searchBooks(query);
+        });
+      }
+
+      const borrowForm = document.getElementById('borrowForm');
+      if (borrowForm) {
+        borrowForm.addEventListener('submit', async (e) => {
+          e.preventDefault();
+          const bookId = document.getElementById('bookId').value;
+          await borrowBook(bookId);
+        });
+      }
+
+      const returnForm = document.getElementById('returnForm');
+      if (returnForm) {
+        returnForm.addEventListener('submit', async (e) => {
+          e.preventDefault();
+          const bookId = document.getElementById('bookIdReturn').value;
+          await returnBook(bookId);
+        });
+      }
+    }
+
+    async function searchBooks(searchQuery) {
+      if (!searchQuery || searchQuery.trim() === '') {
+        alert('Please enter a search query.');
+        return;
+      }
+
+      const resultsDiv = document.getElementById('searchResults');
+      resultsDiv.innerHTML = `<p class='text-blue-600'>Loading...</p>`;
+      resultsDiv.classList.remove('hidden');
+
+      try {
+        const response = await fetch(`http://localhost:8080/api/books/search?searchEle=${encodeURIComponent(searchQuery)}`, {
+          method: 'GET',
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (!response.ok) {
+          throw new Error(`Server returned status ${response.status}`);
+        }
+
+        const books = await response.json();
+        displaySearchResults(books);
+      } catch (error) {
+        console.error('Error fetching search results:', error);
+        resultsDiv.innerHTML = `<p class='text-red-600'>Failed to fetch search results. Please try again.</p>`;
+      }
+    }
+
+    function displaySearchResults(books) {
+      const container = document.getElementById("searchResults");
+
+      // Make it visible
+      container.classList.remove("hidden");
+
+      if (!books.length) {
+        container.innerHTML = `<p class='text-red-600'>No books found.</p>`;
+        return;
+      }
+
+      // Determine layout: single or grid
+      const isSingle = books.length === 1;
+
+      const layoutClass = isSingle
+        ? "flex justify-center" // For one book, center it with minimal width
+        : "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"; // For multiple books
+
+      const cardsHTML = books.map(book => `
+    <div class="bg-blue-50 p-4 rounded-lg shadow w-[250px]">
+      <h3 class="text-blue-800 font-bold text-lg">${book.title}</h3>
+      <p><strong>Author:</strong> ${book.author}</p>
+      <p><strong>ISBN:</strong> ${book.isbn}</p>
+      <p><strong>Publisher:</strong> ${book.publisher}</p>
+      <p><strong>Status:</strong> ${book.status}</p>
+      <img src="${book.imgUrl}" alt="Book Cover" class="w-24 mt-2 rounded">
+    </div>
+  `).join('');
+
+      container.innerHTML = `<div class="${layoutClass}">${cardsHTML}</div>`;
+    }
+
+    async function borrowBook(bookId) {
+      const status = document.getElementById('borrowStatus');
+      status.classList.remove('hidden');
+      status.innerHTML = `<p class='text-blue-600'>Processing...</p>`;
+
+      try {
+        await new Promise(resolve => setTimeout(resolve, 1000));
+        status.innerHTML = `<p class='text-green-600'>Book borrowed successfully!</p>`;
+      } catch (error) {
+        console.error('Error borrowing book:', error);
+        status.innerHTML = `<p class='text-red-600'>Failed to borrow book. Please try again.</p>`;
+      }
+    }
+
+    async function returnBook(bookId) {
+      const status = document.getElementById('returnStatus');
+      status.classList.remove('hidden');
+      status.innerHTML = `<p class='text-blue-600'>Processing...</p>`;
+
+      try {
+        await new Promise(resolve => setTimeout(resolve, 1000));
+        status.innerHTML = `<p class='text-green-600'>Book returned successfully!</p>`;
+      } catch (error) {
+        console.error('Error returning book:', error);
+        status.innerHTML = `<p class='text-red-600'>Failed to return book. Please try again.</p>`;
+      }
+    }
+
+    window.onload = renderContent;
+  </script>
+  <script src="Student/profile.js"></script>
+</body>
+
+</html>
