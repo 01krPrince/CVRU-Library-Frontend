@@ -1,0 +1,502 @@
+[
+    {
+        "title": "Data Structures Through C",
+        "author": "Yashavant Kanetkar",
+        "genre": "Data Structures",
+        "imgUrl": "https://m.media-amazon.com/images/I/51vYbZVbq-L.jpg",
+        "publisher": "BPB Publications",
+        "publicationYear": 2018,
+        "language": "ENGLISH",
+        "totalNumberOfBooks": 5
+    },
+    {
+        "title": "Computer Programming in C",
+        "author": "V. Rajaraman",
+        "genre": "Programming",
+        "imgUrl": "https://m.media-amazon.com/images/I/41e6N3rVdQL.jpg",
+        "publisher": "PHI Learning",
+        "publicationYear": 2013,
+        "language": "ENGLISH",
+        "totalNumberOfBooks": 5
+    },
+    {
+        "title": "Introduction to Algorithms",
+        "author": "Thomas H. Cormen",
+        "genre": "Algorithms",
+        "imgUrl": "https://m.media-amazon.com/images/I/41j7j5H8NLL.jpg",
+        "publisher": "PHI Learning",
+        "publicationYear": 2015,
+        "language": "ENGLISH",
+        "totalNumberOfBooks": 4
+    },
+    {
+        "title": "Operating Systems: Concepts and Design",
+        "author": "Milan Milenkovic",
+        "genre": "Operating Systems",
+        "imgUrl": "https://m.media-amazon.com/images/I/51z7xZ4tL3L.jpg",
+        "publisher": "McGraw Hill India",
+        "publicationYear": 2017,
+        "language": "ENGLISH",
+        "totalNumberOfBooks": 3
+    },
+    {
+        "title": "Database Management Systems",
+        "author": "Raghu Ramakrishnan",
+        "genre": "Databases",
+        "imgUrl": "https://m.media-amazon.com/images/I/51k9z7z7z7L.jpg",
+        "publisher": "McGraw Hill India",
+        "publicationYear": 2014,
+        "language": "ENGLISH",
+        "totalNumberOfBooks": 4
+    },
+    {
+        "title": "Computer Networks",
+        "author": "Andrew S. Tanenbaum",
+        "genre": "Computer Networks",
+        "imgUrl": "https://m.media-amazon.com/images/I/51x7z7z7z7L.jpg",
+        "publisher": "Pearson India",
+        "publicationYear": 2016,
+        "language": "ENGLISH",
+        "totalNumberOfBooks": 5
+    },
+    {
+        "title": "Programming with Java",
+        "author": "E. Balagurusamy",
+        "genre": "Programming",
+        "imgUrl": "https://m.media-amazon.com/images/I/41z7z7z7z7L.jpg",
+        "publisher": "McGraw Hill India",
+        "publicationYear": 2019,
+        "language": "ENGLISH",
+        "totalNumberOfBooks": 6
+    },
+    {
+        "title": "Software Engineering",
+        "author": "K.K. Aggarwal",
+        "genre": "Software Engineering",
+        "imgUrl": "https://m.media-amazon.com/images/I/51y7z7z7z7L.jpg",
+        "publisher": "New Age International",
+        "publicationYear": 2018,
+        "language": "ENGLISH",
+        "totalNumberOfBooks": 3
+    },
+    {
+        "title": "Artificial Intelligence",
+        "author": "Saroj Kaushik",
+        "genre": "Artificial Intelligence",
+        "imgUrl": "https://m.media-amazon.com/images/I/41a7z7z7z7L.jpg",
+        "publisher": "Cengage India",
+        "publicationYear": 2020,
+        "language": "ENGLISH",
+        "totalNumberOfBooks": 4
+    },
+    {
+        "title": "Object-Oriented Programming with C++",
+        "author": "E. Balagurusamy",
+        "genre": "Programming",
+        "imgUrl": "https://m.media-amazon.com/images/I/51b7z7z7z7L.jpg",
+        "publisher": "McGraw Hill India",
+        "publicationYear": 2017,
+        "language": "ENGLISH",
+        "totalNumberOfBooks": 5
+    },
+    {
+        "title": "Theory of Computation",
+        "author": "K.L.P. Mishra",
+        "genre": "Theory of Computation",
+        "imgUrl": "https://m.media-amazon.com/images/I/41c7z7z7z7L.jpg",
+        "publisher": "PHI Learning",
+        "publicationYear": 2015,
+        "language": "ENGLISH",
+        "totalNumberOfBooks": 3
+    },
+    {
+        "title": "Computer Organization and Architecture",
+        "author": "William Stallings",
+        "genre": "Computer Architecture",
+        "imgUrl": "https://m.media-amazon.com/images/I/51d7z7z7z7L.jpg",
+        "publisher": "Pearson India",
+        "publicationYear": 2019,
+        "language": "ENGLISH",
+        "totalNumberOfBooks": 4
+    },
+    {
+        "title": "Data Communications and Networking",
+        "author": "Behrouz A. Forouzan",
+        "genre": "Computer Networks",
+        "imgUrl": "https://m.media-amazon.com/images/I/41e7z7z7z7L.jpg",
+        "publisher": "McGraw Hill India",
+        "publicationYear": 2016,
+        "language": "ENGLISH",
+        "totalNumberOfBooks": 5
+    },
+    {
+        "title": "Design and Analysis of Algorithms",
+        "author": "S. Sridhar",
+        "genre": "Algorithms",
+        "imgUrl": "https://m.media-amazon.com/images/I/51f7z7z7z7L.jpg",
+        "publisher": "Oxford University Press",
+        "publicationYear": 2014,
+        "language": "ENGLISH",
+        "totalNumberOfBooks": 3
+    },
+    {
+        "title": "Discrete Mathematics and Its Applications",
+        "author": "Kenneth H. Rosen",
+        "genre": "Discrete Mathematics",
+        "imgUrl": "https://m.media-amazon.com/images/I/41g7z7z7z7L.jpg",
+        "publisher": "McGraw Hill India",
+        "publicationYear": 2018,
+        "language": "ENGLISH",
+        "totalNumberOfBooks": 4
+    },
+    {
+        "title": "Compiler Design",
+        "author": "A.A. Puntambekar",
+        "genre": "Compiler Design",
+        "imgUrl": "https://m.media-amazon.com/images/I/51h7z7z7z7L.jpg",
+        "publisher": "Technical Publications",
+        "publicationYear": 2017,
+        "language": "ENGLISH",
+        "totalNumberOfBooks": 3
+    },
+    {
+        "title": "Web Technologies",
+        "author": "Uttam K. Roy",
+        "genre": "Web Development",
+        "imgUrl": "https://m.media-amazon.com/images/I/41i7z7z7z7L.jpg",
+        "publisher": "Oxford University Press",
+        "publicationYear": 2016,
+        "language": "ENGLISH",
+        "totalNumberOfBooks": 4
+    },
+    {
+        "title": "Python Programming",
+        "author": "Reema Thareja",
+        "genre": "Programming",
+        "imgUrl": "https://m.media-amazon.com/images/I/51j7z7z7z7L.jpg",
+        "publisher": "Oxford University Press",
+        "publicationYear": 2019,
+        "language": "ENGLISH",
+        "totalNumberOfBooks": 5
+    },
+    {
+        "title": "Computer Graphics",
+        "author": "Amarendra N. Sinha",
+        "genre": "Computer Graphics",
+        "imgUrl": "https://m.media-amazon.com/images/I/41k7z7z7z7L.jpg",
+        "publisher": "McGraw Hill India",
+        "publicationYear": 2015,
+        "language": "ENGLISH",
+        "totalNumberOfBooks": 3
+    },
+    {
+        "title": "Machine Learning",
+        "author": "Saikat Dutt",
+        "genre": "Machine Learning",
+        "imgUrl": "https://m.media-amazon.com/images/I/51l7z7z7z7L.jpg",
+        "publisher": "Pearson India",
+        "publicationYear": 2020,
+        "language": "ENGLISH",
+        "totalNumberOfBooks": 4
+    },
+    {
+        "title": "Cryptography and Network Security",
+        "author": "Atul Kahate",
+        "genre": "Network Security",
+        "imgUrl": "https://m.media-amazon.com/images/I/41m7z7z7z7L.jpg",
+        "publisher": "McGraw Hill India",
+        "publicationYear": 2017,
+        "language": "ENGLISH",
+        "totalNumberOfBooks": 3
+    },
+    {
+        "title": "Digital Logic and Computer Design",
+        "author": "M. Morris Mano",
+        "genre": "Digital Electronics",
+        "imgUrl": "https://m.media-amazon.com/images/I/51n7z7z7z7L.jpg",
+        "publisher": "Pearson India",
+        "publicationYear": 2016,
+        "language": "ENGLISH",
+        "totalNumberOfBooks": 4
+    },
+    {
+        "title": "Data Warehousing and Data Mining",
+        "author": "Reema Thareja",
+        "genre": "Data Mining",
+        "imgUrl": "https://m.media-amazon.com/images/I/41n7z7z7z7L.jpg",
+        "publisher": "Oxford University Press",
+        "publicationYear": 2018,
+        "language": "ENGLISH",
+        "totalNumberOfBooks": 3
+    },
+    {
+        "title": "Embedded Systems",
+        "author": "Raj Kamal",
+        "genre": "Embedded Systems",
+        "imgUrl": "https://m.media-amazon.com/images/I/51o7z7z7z7L.jpg",
+        "publisher": "McGraw Hill India",
+        "publicationYear": 2015,
+        "language": "ENGLISH",
+        "totalNumberOfBooks": 4
+    },
+    {
+        "title": "Cloud Computing",
+        "author": "Saurabh Kumar",
+        "genre": "Cloud Computing",
+        "imgUrl": "https://m.media-amazon.com/images/I/41p7z7z7z7L.jpg",
+        "publisher": "BPB Publications",
+        "publicationYear": 2019,
+        "language": "ENGLISH",
+        "totalNumberOfBooks": 3
+    },
+    {
+        "title": "Programming in ANSI C",
+        "author": "E. Balagurusamy",
+        "genre": "Programming",
+        "imgUrl": "https://m.media-amazon.com/images/I/51q7z7z7z7L.jpg",
+        "publisher": "McGraw Hill India",
+        "publicationYear": 2017,
+        "language": "ENGLISH",
+        "totalNumberOfBooks": 5
+    },
+    {
+        "title": "Automata Theory and Formal Languages",
+        "author": "Shyamalendu Kandar",
+        "genre": "Theory of Computation",
+        "imgUrl": "https://m.media-amazon.com/images/I/41r7z7z7z7L.jpg",
+        "publisher": "Pearson India",
+        "publicationYear": 2016,
+        "language": "ENGLISH",
+        "totalNumberOfBooks": 3
+    },
+    {
+        "title": "Microprocessor Architecture and Programming",
+        "author": "Ramesh Gaonkar",
+        "genre": "Microprocessors",
+        "imgUrl": "https://m.media-amazon.com/images/I/51s7z7z7z7L.jpg",
+        "publisher": "Penram International",
+        "publicationYear": 2018,
+        "language": "ENGLISH",
+        "totalNumberOfBooks": 4
+    },
+    {
+        "title": "Software Testing",
+        "author": "Yogesh Singh",
+        "genre": "Software Engineering",
+        "imgUrl": "https://m.media-amazon.com/images/I/41t7z7z7z7L.jpg",
+        "publisher": "Cambridge University Press",
+        "publicationYear": 2017,
+        "language": "ENGLISH",
+        "totalNumberOfBooks": 3
+    },
+    {
+        "title": "Big Data Analytics",
+        "author": "Parag Kulkarni",
+        "genre": "Big Data",
+        "imgUrl": "https://m.media-amazon.com/images/I/51u7z7z7z7L.jpg",
+        "publisher": "PHI Learning",
+        "publicationYear": 2019,
+        "language": "ENGLISH",
+        "totalNumberOfBooks": 4
+    },
+    {
+        "title": "Internet of Things",
+        "author": "Arshdeep Bahga",
+        "genre": "IoT",
+        "imgUrl": "https://m.media-amazon.com/images/I/41v7z7z7z7L.jpg",
+        "publisher": "Universities Press",
+        "publicationYear": 2020,
+        "language": "ENGLISH",
+        "totalNumberOfBooks": 3
+    },
+    {
+        "title": "Computer System Architecture",
+        "author": "M. Morris Mano",
+        "genre": "Computer Architecture",
+        "imgUrl": "https://m.media-amazon.com/images/I/51w7z7z7z7L.jpg",
+        "publisher": "Pearson India",
+        "publicationYear": 2016,
+        "language": "ENGLISH",
+        "totalNumberOfBooks": 4
+    },
+    {
+        "title": "Data Structures and Algorithms in Python",
+        "author": "Rance D. Necaise",
+        "genre": "Data Structures",
+        "imgUrl": "https://m.media-amazon.com/images/I/41x7z7z7z7L.jpg",
+        "publisher": "Wiley India",
+        "publicationYear": 2018,
+        "language": "ENGLISH",
+        "totalNumberOfBooks": 3
+    },
+    {
+        "title": "Operating System Concepts",
+        "author": "Abraham Silberschatz",
+        "genre": "Operating Systems",
+        "imgUrl": "https://m.media-amazon.com/images/I/51x7z7z7z7L.jpg",
+        "publisher": "Wiley India",
+        "publicationYear": 2017,
+        "language": "ENGLISH",
+        "totalNumberOfBooks": 4
+    },
+    {
+        "title": "Advanced Database Management Systems",
+        "author": "Rini Chakrabarti",
+        "genre": "Databases",
+        "imgUrl": "https://m.media-amazon.com/images/I/41y7z7z7z7L.jpg",
+        "publisher": "Dreamtech Press",
+        "publicationYear": 2016,
+        "language": "ENGLISH",
+        "totalNumberOfBooks": 3
+    },
+    {
+        "title": "Mobile Computing",
+        "author": "Raj Kamal",
+        "genre": "Mobile Computing",
+        "imgUrl": "https://m.media-amazon.com/images/I/51y7z7z7z7L.jpg",
+        "publisher": "Oxford University Press",
+        "publicationYear": 2018,
+        "language": "ENGLISH",
+        "totalNumberOfBooks": 4
+    },
+    {
+        "title": "Parallel Computing",
+        "author": "V. Rajaraman",
+        "genre": "Parallel Computing",
+        "imgUrl": "https://m.media-amazon.com/images/I/41z7z7z7z7L.jpg",
+        "publisher": "PHI Learning",
+        "publicationYear": 2017,
+        "language": "ENGLISH",
+        "totalNumberOfBooks": 3
+    },
+    {
+        "title": "Computer Vision",
+        "author": "Sunil Kumar",
+        "genre": "Computer Vision",
+        "imgUrl": "https://m.media-amazon.com/images/I/51z7z7z7z7L.jpg",
+        "publisher": "BPB Publications",
+        "publicationYear": 2019,
+        "language": "ENGLISH",
+        "totalNumberOfBooks": 4
+    },
+    {
+        "title": "Distributed Systems",
+        "author": "Sukumar Ghosh",
+        "genre": "Distributed Systems",
+        "imgUrl": "https://m.media-amazon.com/images/I/41a7z7z7z7L.jpg",
+        "publisher": "CRC Press",
+        "publicationYear": 2016,
+        "language": "ENGLISH",
+        "totalNumberOfBooks": 3
+    },
+    {
+        "title": "Network Programming",
+        "author": "Katta G. Murty",
+        "genre": "Computer Networks",
+        "imgUrl": "https://m.media-amazon.com/images/I/51b7z7z7z7L.jpg",
+        "publisher": "PHI Learning",
+        "publicationYear": 2018,
+        "language": "ENGLISH",
+        "totalNumberOfBooks": 4
+    },
+    {
+        "title": "Software Project Management",
+        "author": "Bob Hughes",
+        "genre": "Software Engineering",
+        "imgUrl": "https://m.media-amazon.com/images/I/41c7z7z7z7L.jpg",
+        "publisher": "McGraw Hill India",
+        "publicationYear": 2017,
+        "language": "ENGLISH",
+        "totalNumberOfBooks": 3
+    },
+    {
+        "title": "Deep Learning",
+        "author": "Anurag Sharma",
+        "genre": "Deep Learning",
+        "imgUrl": "https://m.media-amazon.com/images/I/51d7z7z7z7L.jpg",
+        "publisher": "BPB Publications",
+        "publicationYear": 2020,
+        "language": "ENGLISH",
+        "totalNumberOfBooks": 4
+    },
+    {
+        "title": "Pattern Recognition",
+        "author": "Sankar K. Pal",
+        "genre": "Pattern Recognition",
+        "imgUrl": "https://m.media-amazon.com/images/I/41e7z7z7z7L.jpg",
+        "publisher": "World Scientific",
+        "publicationYear": 2016,
+        "language": "ENGLISH",
+        "totalNumberOfBooks": 3
+    },
+    {
+        "title": "Graph Theory with Applications",
+        "author": "Narsingh Deo",
+        "genre": "Graph Theory",
+        "imgUrl": "https://m.media-amazon.com/images/I/51f7z7z7z7L.jpg",
+        "publisher": "PHI Learning",
+        "publicationYear": 2018,
+        "language": "ENGLISH",
+        "totalNumberOfBooks": 4
+    },
+    {
+        "title": "Information Security",
+        "author": "Dhiren R. Patel",
+        "genre": "Cybersecurity",
+        "imgUrl": "https://m.media-amazon.com/images/I/41g7z7z7z7L.jpg",
+        "publisher": "PHI Learning",
+        "publicationYear": 2017,
+        "language": "ENGLISH",
+        "totalNumberOfBooks": 3
+    },
+    {
+        "title": "Human-Computer Interaction",
+        "author": "K. Meena",
+        "genre": "HCI",
+        "imgUrl": "https://m.media-amazon.com/images/I/51h7z7z7z7L.jpg",
+        "publisher": "PHI Learning",
+        "publicationYear": 2019,
+        "language": "ENGLISH",
+        "totalNumberOfBooks": 4
+    },
+    {
+        "title": "Numerical Methods for Engineers",
+        "author": "S.K. Gupta",
+        "genre": "Numerical Methods",
+        "imgUrl": "https://m.media-amazon.com/images/I/41i7z7z7z7L.jpg",
+        "publisher": "New Age International",
+        "publicationYear": 2016,
+        "language": "ENGLISH",
+        "totalNumberOfBooks": 3
+    },
+    {
+        "title": "Bioinformatics",
+        "author": "Harshawardhan P. Bal",
+        "genre": "Bioinformatics",
+        "imgUrl": "https://m.media-amazon.com/images/I/51j7z7z7z7L.jpg",
+        "publisher": "Oxford University Press",
+        "publicationYear": 2018,
+        "language": "ENGLISH",
+        "totalNumberOfBooks": 4
+    },
+    {
+        "title": "Natural Language Processing",
+        "author": "Tanweer Alam",
+        "genre": "NLP",
+        "imgUrl": "https://m.media-amazon.com/images/I/41k7z7z7z7L.jpg",
+        "publisher": "BPB Publications",
+        "publicationYear": 2020,
+        "language": "ENGLISH",
+        "totalNumberOfBooks": 3
+    },
+    {
+        "title": "Blockchain Technology",
+        "author": "Chandramouli Subramanian",
+        "genre": "Blockchain",
+        "imgUrl": "https://m.media-amazon.com/images/I/51l7z7z7z7L.jpg",
+        "publisher": "Universities Press",
+        "publicationYear": 2019,
+        "language": "ENGLISH",
+        "totalNumberOfBooks": 4
+    }
+]

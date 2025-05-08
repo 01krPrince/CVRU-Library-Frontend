@@ -1,7 +1,6 @@
 let updateFormInitialized = false;
-let uploadedImageUrl = null; // Shared between add/update
+let uploadedImageUrl = null;
 
-// ✅ Reusable Image Upload Handler
 function handleImageUpload(fileInput, form, callback) {
     fileInput.addEventListener('change', async (e) => {
         const selectedFile = e.target.files[0];
@@ -85,7 +84,7 @@ function setUpdateBookForm() {
             }
 
             try {
-                const response = await fetch(`http://localhost:8080/api/books/searchByISBN?isbn=${isbn}`);
+                const response = await fetch(`https://cvru-library-backend.onrender.com/api/books/searchByISBN?isbn=${isbn}`);
                 if (!response.ok) throw new Error('Book not found');
 
                 const book = await response.json();
@@ -166,7 +165,7 @@ function setUpdateBookForm() {
             btn.innerText = 'Updating...';
             const id = localStorage.getItem('id');
 
-            const response = await fetch(`http://localhost:8080/api/books/updateByISBN?isbn=${isbn}&adminId=${id}`, {
+            const response = await fetch(`https://cvru-library-backend.onrender.com/api/books/updateByISBN?isbn=${isbn}&adminId=${id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
@@ -246,7 +245,7 @@ function setAddBookForm() {
             const btn = form.querySelector('button[type="submit"]');
             btn.innerText = 'Adding...';
 
-            const response = await fetch(`http://localhost:8080/api/books/add?adminId=${id}`, {
+            const response = await fetch(`https://cvru-library-backend.onrender.com/api/books/add?adminId=${id}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

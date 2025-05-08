@@ -1,7 +1,7 @@
 
 document.addEventListener("DOMContentLoaded", function () {
-    const adminId = '6804da3b6755f6426c607317';
-    fetch(`http://localhost:8080/api/books/adminDashboard?adminId=${adminId}`)
+    const adminId = localStorage.getItem('id');
+    fetch(`https://cvru-library-backend.onrender.com/api/books/adminDashboard?adminId=${adminId}`)
         .then(response => response.json())
         .then(data => {
             document.getElementById('totalBooks').textContent = data.totalBookCount;

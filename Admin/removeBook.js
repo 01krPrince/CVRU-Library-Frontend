@@ -33,7 +33,7 @@ function setRemoveBookForm() {
 
             console.log('Sending bookData:', JSON.stringify(bookData, null, 2));
 
-            const response = await fetch(`http://localhost:8080/api/books/${id}?isbn=${bookData.isbn}&adminId=${id}`, {
+            const response = await fetch(`https://cvru-library-backend.onrender.com/api/books/${id}?isbn=${bookData.isbn}&adminId=${id}`, {
                 method: 'DELETE',
                 headers: {
                     'Content-Type': 'application/json',

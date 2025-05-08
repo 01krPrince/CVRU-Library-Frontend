@@ -14,7 +14,7 @@ function setupAddBookForm() {
 
         const formData = new FormData();
         formData.append("file", selectedFile);
-        formData.append("upload_preset", "ml_default"); // Change as per your Cloudinary preset
+        formData.append("upload_preset", "ml_default");
         formData.append("folder", "CVRU_Library");
 
         try {
@@ -103,8 +103,7 @@ function setupAddBookForm() {
         try {
             const btn = document.getElementById("addBook");
             btn.innerText = "Adding...";
-
-            const response = await fetch(`http://localhost:8080/api/books/addBook?adminId=${id}`, {
+            const response = await fetch(`https://cvru-library-backend.onrender.com/api/books/addBook?adminId=${id}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -137,7 +136,7 @@ function setupAddBookForm() {
         } catch (error) {
             console.error('Error:', error);
             if (error.message.includes('Failed to fetch')) {
-                alert('Failed to connect to the server. Is it running on http://localhost:8080?');
+                alert('Failed to connect to the server. Is it running on https://cvru-library-backend.onrender.com?');
             } else {
                 alert('Unexpected error: ' + error.message);
             }
