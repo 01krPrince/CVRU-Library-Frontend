@@ -11,7 +11,7 @@ async function loadStudentProfile() {
     try {
       const response = await fetch(`https://cvru-library-backend.onrender.com/api/students/${enrollmentNo}`);
       if (!response.ok) throw new Error("Network response was not ok");
-
+console.log(response);
       const data = await response.json();
       const profileHTML = `
           <div class="bg-white text-gray-800 p-8 rounded-xl shadow-2xl w-full max-w-lg slide-in-right">
@@ -35,3 +35,4 @@ async function loadStudentProfile() {
           </div>`;
     }
   }
+  loadStudentProfile();
